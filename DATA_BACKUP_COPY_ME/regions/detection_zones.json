@@ -1,3 +1,13 @@
 {
-  "zones": []
+  "zones": [
+    {
+      "zone_id": "zone_screen_1",
+      "screen_id": "screen_1",
+      "screen_name": "Screen 1",
+      "x": 620,
+      "y": 45,
+      "w": 259,
+      "h": 464
+    }
+  ]
 }

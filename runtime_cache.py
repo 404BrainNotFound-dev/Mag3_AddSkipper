@@ -48,6 +48,30 @@ class RuntimeCache:
                 img = cv2.imread(str(p), cv2.IMREAD_COLOR)
                 if img is None:
                     continue
+
+                # Runtime precision rule.
+                # Close and back templates are selected by a cross point.
+                # Older templates may be large, so we use a smaller centered crop in RAM.
+                # The source image file is not changed.
+                folder_name = p.parent.name.lower()
+                max_size = None
+                if folder_name == "close_templates":
+                    max_size = 36
+                elif folder_name == "back_templates":
+                    max_size = 44
+
+                if max_size is not None:
+                    h, w = img.shape[:2]
+                    if w > max_size or h > max_size:
+                        cx = w // 2
+                        cy = h // 2
+                        half = max_size // 2
+                        x1 = max(0, cx - half)
+                        y1 = max(0, cy - half)
+                        x2 = min(w, cx + half)
+                        y2 = min(h, cy + half)
+                        img = img[y1:y2, x1:x2]
+
                 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
                 templates.append({
                     "name": p.name,

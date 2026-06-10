@@ -23,7 +23,7 @@ from automation_engine import AutomationEngine
 from selection_tools import select_phone_screens, select_detection_zones, save_cross_template
 from hotkey_manager import EmergencyHotkey
 
-APP_TITLE = "Mage Adblockkai V6"
+APP_TITLE = "mag3_addskipper V6.1"
 
 
 class ScrollFrame(ttk.Frame):
@@ -151,14 +151,16 @@ class MageApp(tk.Tk):
         grid = ttk.Frame(runtime, style="Card.TFrame")
         grid.pack(fill="x")
         self.threshold_var = tk.StringVar(value=str(self.settings.get("template_threshold", 0.78)))
-        self.scan_delay_var = tk.StringVar(value=str(self.settings.get("scan_delay_seconds", 0.03)))
+        self.scan_delay_var = tk.StringVar(value=str(self.settings.get("scan_delay_seconds", 0.01)))
+        self.screen_check_var = tk.StringVar(value=str(self.settings.get("screen_check_seconds", 3.0)))
         self.idle_cycles_var = tk.StringVar(value=str(self.settings.get("inactivity_cycles", 3)))
         self.auto_launch_var = tk.BooleanVar(value=bool(self.settings.get("auto_launch_app_icon", True)))
         self.add_labeled_entry(grid, 0, "Template trust", self.threshold_var, "Example 0.78")
-        self.add_labeled_entry(grid, 1, "Scan delay", self.scan_delay_var, "Example 0.03")
-        self.add_labeled_entry(grid, 2, "Idle cycles", self.idle_cycles_var, "Example 3")
-        ttk.Checkbutton(grid, text="Auto launch app by icon", variable=self.auto_launch_var).grid(row=3, column=0, columnspan=3, sticky="w", pady=8)
-        ttk.Button(grid, text="Save Runtime Settings", command=self.save_runtime_settings).grid(row=4, column=0, sticky="w", pady=(8, 0))
+        self.add_labeled_entry(grid, 1, "Scan delay", self.scan_delay_var, "Example 0.01")
+        self.add_labeled_entry(grid, 2, "Seconds per screen", self.screen_check_var, "Default 3")
+        self.add_labeled_entry(grid, 3, "Idle cycles", self.idle_cycles_var, "Example 3")
+        ttk.Checkbutton(grid, text="Auto launch selected app by icon", variable=self.auto_launch_var).grid(row=4, column=0, columnspan=3, sticky="w", pady=8)
+        ttk.Button(grid, text="Save Runtime Settings", command=self.save_runtime_settings).grid(row=5, column=0, sticky="w", pady=(8, 0))
 
         log_card = self.card(container, "Activity log", "Recent actions and errors appear here.")
         self.log_box = tk.Text(log_card, height=12, bg="#0d1117", fg="#e6edf3", insertbackground="#e6edf3", relief="flat", font=("Consolas", 10))
@@ -207,20 +209,24 @@ class MageApp(tk.Tk):
         advanced = self.card(parent, "Automation settings", "Advanced settings are kept here so the Home screen stays simple.")
         grid = ttk.Frame(advanced, style="Card.TFrame")
         grid.pack(fill="x")
-        self.click_cooldown_var = tk.StringVar(value=str(self.settings.get("click_cooldown_seconds", 0.15)))
+        self.click_cooldown_var = tk.StringVar(value=str(self.settings.get("click_cooldown_seconds", 0.05)))
         self.early_accept_var = tk.StringVar(value=str(self.settings.get("early_accept_threshold", 0.92)))
-        self.close_crop_var = tk.StringVar(value=str(self.settings.get("close_template_crop_size", 72)))
-        self.back_crop_var = tk.StringVar(value=str(self.settings.get("back_template_crop_size", 72)))
+        self.post_close_delay_var = tk.StringVar(value=str(self.settings.get("post_close_click_delay_seconds", 0.12)))
+        self.app_launch_wait_var = tk.StringVar(value=str(self.settings.get("app_launch_wait_seconds", 0.45)))
+        self.close_crop_var = tk.StringVar(value=str(self.settings.get("close_template_crop_size", 36)))
+        self.back_crop_var = tk.StringVar(value=str(self.settings.get("back_template_crop_size", 44)))
         self.icon_crop_var = tk.StringVar(value=str(self.settings.get("icon_template_crop_size", 96)))
         self.recovery_var = tk.StringVar(value=str(self.settings.get("inactivity_recovery_action", "back_template")))
-        self.add_labeled_entry(grid, 0, "Click cooldown", self.click_cooldown_var, "Example 0.15")
+        self.add_labeled_entry(grid, 0, "Click cooldown", self.click_cooldown_var, "Example 0.05")
         self.add_labeled_entry(grid, 1, "Early accept score", self.early_accept_var, "Example 0.92")
-        self.add_labeled_entry(grid, 2, "Close crop size", self.close_crop_var, "Pixels")
-        self.add_labeled_entry(grid, 3, "Back crop size", self.back_crop_var, "Pixels")
-        self.add_labeled_entry(grid, 4, "Icon crop size", self.icon_crop_var, "Pixels")
-        ttk.Label(grid, text="Idle recovery", style="Card.TLabel").grid(row=5, column=0, sticky="w", pady=6)
-        ttk.Combobox(grid, textvariable=self.recovery_var, state="readonly", values=["back_template", "none", "press_key:esc", "press_key:backspace"], width=24).grid(row=5, column=1, sticky="w", pady=6)
-        ttk.Button(grid, text="Save All Settings", command=self.save_all_settings).grid(row=6, column=0, sticky="w", pady=(12, 0))
+        self.add_labeled_entry(grid, 2, "After close delay", self.post_close_delay_var, "Example 0.12")
+        self.add_labeled_entry(grid, 3, "App launch wait", self.app_launch_wait_var, "Example 0.45")
+        self.add_labeled_entry(grid, 4, "Close crop size", self.close_crop_var, "Default 36")
+        self.add_labeled_entry(grid, 5, "Back crop size", self.back_crop_var, "Default 44")
+        self.add_labeled_entry(grid, 6, "Icon crop size", self.icon_crop_var, "Pixels")
+        ttk.Label(grid, text="Idle recovery", style="Card.TLabel").grid(row=7, column=0, sticky="w", pady=6)
+        ttk.Combobox(grid, textvariable=self.recovery_var, state="readonly", values=["back_template", "none", "press_key:esc", "press_key:backspace"], width=24).grid(row=7, column=1, sticky="w", pady=6)
+        ttk.Button(grid, text="Save All Settings", command=self.save_all_settings).grid(row=8, column=0, sticky="w", pady=(12, 0))
 
         danger = self.card(parent, "Reset", "This deletes all app profiles templates regions screenshots and custom settings. The app returns to default empty setup.")
         ttk.Button(danger, text="Reset Everything", style="Danger.TButton", command=self.reset_everything).pack(anchor="w")
@@ -295,6 +301,7 @@ class MageApp(tk.Tk):
         try:
             self.settings["template_threshold"] = float(self.threshold_var.get())
             self.settings["scan_delay_seconds"] = float(self.scan_delay_var.get())
+            self.settings["screen_check_seconds"] = float(self.screen_check_var.get())
             self.settings["inactivity_cycles"] = int(float(self.idle_cycles_var.get()))
             self.settings["auto_launch_app_icon"] = bool(self.auto_launch_var.get())
             save_settings(self.settings)
@@ -307,6 +314,8 @@ class MageApp(tk.Tk):
             self.save_runtime_settings()
             self.settings["click_cooldown_seconds"] = float(self.click_cooldown_var.get())
             self.settings["early_accept_threshold"] = float(self.early_accept_var.get())
+            self.settings["post_close_click_delay_seconds"] = float(self.post_close_delay_var.get())
+            self.settings["app_launch_wait_seconds"] = float(self.app_launch_wait_var.get())
             self.settings["close_template_crop_size"] = int(float(self.close_crop_var.get()))
             self.settings["back_template_crop_size"] = int(float(self.back_crop_var.get()))
             self.settings["icon_template_crop_size"] = int(float(self.icon_crop_var.get()))
@@ -360,11 +369,18 @@ class MageApp(tk.Tk):
 
     def action_make_template(self, template_type: str):
         pid = self.get_selected_profile_id()
-        sizes = {
-            "close": int(self.settings.get("close_template_crop_size", 72)),
-            "back": int(self.settings.get("back_template_crop_size", 72)),
-            "icon": int(self.settings.get("icon_template_crop_size", 96)),
-        }
+        try:
+            sizes = {
+                "close": int(float(self.close_crop_var.get())),
+                "back": int(float(self.back_crop_var.get())),
+                "icon": int(float(self.icon_crop_var.get())),
+            }
+        except Exception:
+            sizes = {
+                "close": int(self.settings.get("close_template_crop_size", 36)),
+                "back": int(self.settings.get("back_template_crop_size", 44)),
+                "icon": int(self.settings.get("icon_template_crop_size", 96)),
+            }
         self.run_visible_task(
             f"Add {template_type} template",
             lambda: save_cross_template(pid, template_type, sizes.get(template_type, 72)),
@@ -431,9 +447,12 @@ class MageApp(tk.Tk):
         self.settings = load_settings()
         self.threshold_var.set(str(self.settings.get("template_threshold")))
         self.scan_delay_var.set(str(self.settings.get("scan_delay_seconds")))
+        self.screen_check_var.set(str(self.settings.get("screen_check_seconds")))
         self.idle_cycles_var.set(str(self.settings.get("inactivity_cycles")))
         self.click_cooldown_var.set(str(self.settings.get("click_cooldown_seconds")))
         self.early_accept_var.set(str(self.settings.get("early_accept_threshold")))
+        self.post_close_delay_var.set(str(self.settings.get("post_close_click_delay_seconds")))
+        self.app_launch_wait_var.set(str(self.settings.get("app_launch_wait_seconds")))
         self.close_crop_var.set(str(self.settings.get("close_template_crop_size")))
         self.back_crop_var.set(str(self.settings.get("back_template_crop_size")))
         self.icon_crop_var.set(str(self.settings.get("icon_template_crop_size")))
@@ -454,7 +473,7 @@ class MageApp(tk.Tk):
             return
         self.cache.clear()
         self.engine.start(pid, self.settings)
-        self.log("Automation started")
+        self.log("Automation started. The selected app icon is checked on every enabled screen first.")
 
     def stop_automation(self):
         self.engine.stop()

@@ -1,3 +1,85 @@
 {
-  "screens": []
+  "screens": [
+    {
+      "screen_id": "screen_1",
+      "screen_name": "Screen 1",
+      "x": 8,
+      "y": 42,
+      "w": 265,
+      "h": 474,
+      "enabled": true
+    },
+    {
+      "screen_id": "screen_2",
+      "screen_name": "Screen 2",
+      "x": 310,
+      "y": 40,
+      "w": 266,
+      "h": 470,
+      "enabled": true
+    },
+    {
+      "screen_id": "screen_3",
+      "screen_name": "Screen 3",
+      "x": 616,
+      "y": 39,
+      "w": 269,
+      "h": 474,
+      "enabled": true
+    },
+    {
+      "screen_id": "screen_4",
+      "screen_name": "Screen 4",
+      "x": 925,
+      "y": 39,
+      "w": 265,
+      "h": 472,
+      "enabled": true
+    },
+    {
+      "screen_id": "screen_5",
+      "screen_name": "Screen 5",
+      "x": 1232,
+      "y": 38,
+      "w": 269,
+      "h": 474,
+      "enabled": true
+    },
+    {
+      "screen_id": "screen_6",
+      "screen_name": "Screen 6",
+      "x": 1540,
+      "y": 40,
+      "w": 267,
+      "h": 472,
+      "enabled": true
+    },
+    {
+      "screen_id": "screen_7",
+      "screen_name": "Screen 7",
+      "x": 0,
+      "y": 558,
+      "w": 266,
+      "h": 472,
+      "enabled": true
+    },
+    {
+      "screen_id": "screen_8",
+      "screen_name": "Screen 8",
+      "x": 310,
+      "y": 555,
+      "w": 264,
+      "h": 475,
+      "enabled": true
+    },
+    {
+      "screen_id": "screen_9",
+      "screen_name": "Screen 9",
+      "x": 618,
+      "y": 558,
+      "w": 264,
+      "h": 470,
+      "enabled": true
+    }
+  ]
 }
