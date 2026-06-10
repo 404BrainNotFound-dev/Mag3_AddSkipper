@@ -1,0 +1,24 @@
+{
+  "current_profile_id": "earth",
+  "template_threshold": 0.78,
+  "early_accept_threshold": 0.92,
+  "scan_delay_seconds": 0.03,
+  "click_cooldown_seconds": 0.15,
+  "max_clicks_per_minute": 240,
+  "multi_scale_matching": false,
+  "template_scales": [
+    0.9,
+    1.0,
+    1.1
+  ],
+  "close_template_crop_size": 72,
+  "back_template_crop_size": 72,
+  "icon_template_crop_size": 96,
+  "inactivity_cycles": 3,
+  "unchanged_threshold": 3.0,
+  "inactivity_recovery_action": "back_template",
+  "auto_launch_app_icon": true,
+  "stop_backspace_presses": 3,
+  "stop_backspace_window_seconds": 1.2,
+  "save_debug_images": false
+}
