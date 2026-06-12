@@ -4,10 +4,82 @@
       "zone_id": "zone_screen_1",
       "screen_id": "screen_1",
       "screen_name": "Screen 1",
-      "x": 620,
-      "y": 45,
-      "w": 259,
-      "h": 464
+      "x": 1,
+      "y": 41,
+      "w": 301,
+      "h": 469
+    },
+    {
+      "zone_id": "zone_screen_2",
+      "screen_id": "screen_2",
+      "screen_name": "Screen 2",
+      "x": 305,
+      "y": 39,
+      "w": 299,
+      "h": 462
+    },
+    {
+      "zone_id": "zone_screen_3",
+      "screen_id": "screen_3",
+      "screen_name": "Screen 3",
+      "x": 609,
+      "y": 43,
+      "w": 300,
+      "h": 459
+    },
+    {
+      "zone_id": "zone_screen_4",
+      "screen_id": "screen_4",
+      "screen_name": "Screen 4",
+      "x": 913,
+      "y": 44,
+      "w": 299,
+      "h": 462
+    },
+    {
+      "zone_id": "zone_screen_5",
+      "screen_id": "screen_5",
+      "screen_name": "Screen 5",
+      "x": 1215,
+      "y": 38,
+      "w": 300,
+      "h": 469
+    },
+    {
+      "zone_id": "zone_screen_6",
+      "screen_id": "screen_6",
+      "screen_name": "Screen 6",
+      "x": 1524,
+      "y": 40,
+      "w": 295,
+      "h": 460
+    },
+    {
+      "zone_id": "zone_screen_7",
+      "screen_id": "screen_7",
+      "screen_name": "Screen 7",
+      "x": 1,
+      "y": 556,
+      "w": 296,
+      "h": 462
+    },
+    {
+      "zone_id": "zone_screen_8",
+      "screen_id": "screen_8",
+      "screen_name": "Screen 8",
+      "x": 305,
+      "y": 550,
+      "w": 297,
+      "h": 468
+    },
+    {
+      "zone_id": "zone_screen_9",
+      "screen_id": "screen_9",
+      "screen_name": "Screen 9",
+      "x": 608,
+      "y": 550,
+      "w": 301,
+      "h": 465
     }
   ]
 }

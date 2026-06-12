@@ -1,0 +1,147 @@
+{
+  "rules": [
+    {
+      "rule_id": "16eba3bdfc",
+      "name": "PLay store logo",
+      "trigger_template": "D:\\Project\\mage adblock\\v7\\mag3_addskipper\\DATA_BACKUP_COPY_ME\\profiles\\live_earth\\conditional_trigger_templates\\trigger_play_store_logo_20260611_163159.png",
+      "target_template": "D:\\Project\\mage adblock\\v7\\mag3_addskipper\\DATA_BACKUP_COPY_ME\\profiles\\live_earth\\conditional_target_templates\\target_play_store_logo_20260611_163205.png",
+      "action": "click_target_template",
+      "enabled": true,
+      "created_at": "20260611_163205",
+      "correct_count": 0,
+      "wrong_count": 0
+    },
+    {
+      "rule_id": "ab3e5a8448",
+      "name": "playstore bell",
+      "trigger_template": "D:\\Project\\mage adblock\\v7\\mag3_addskipper\\DATA_BACKUP_COPY_ME\\profiles\\live_earth\\conditional_trigger_templates\\trigger_playstore_bell_20260611_163317.png",
+      "target_template": "D:\\Project\\mage adblock\\v7\\mag3_addskipper\\DATA_BACKUP_COPY_ME\\profiles\\live_earth\\conditional_target_templates\\target_playstore_bell_20260611_163323.png",
+      "action": "click_target_template",
+      "enabled": true,
+      "created_at": "20260611_163323",
+      "correct_count": 0,
+      "wrong_count": 0
+    },
+    {
+      "rule_id": "556b166be6",
+      "name": "satelite",
+      "trigger_template": "D:\\Project\\mage adblock\\v7\\mag3_addskipper\\DATA_BACKUP_COPY_ME\\profiles\\live_earth\\conditional_trigger_templates\\trigger_satelite_20260611_163401.png",
+      "target_template": "D:\\Project\\mage adblock\\v7\\mag3_addskipper\\DATA_BACKUP_COPY_ME\\profiles\\live_earth\\conditional_target_templates\\target_satelite_20260611_163406.png",
+      "action": "click_target_template",
+      "enabled": true,
+      "created_at": "20260611_163406",
+      "correct_count": 0,
+      "wrong_count": 0
+    },
+    {
+      "rule_id": "b3dc9465eb",
+      "name": "lower screen",
+      "trigger_template": "D:\\Project\\mage adblock\\v7\\mag3_addskipper\\DATA_BACKUP_COPY_ME\\profiles\\live_earth\\conditional_trigger_templates\\trigger_lower_screen_20260611_163727.png",
+      "target_template": "D:\\Project\\mage adblock\\v7\\mag3_addskipper\\DATA_BACKUP_COPY_ME\\profiles\\live_earth\\conditional_target_templates\\target_lower_screen_20260611_163732.png",
+      "action": "click_target_template",
+      "enabled": true,
+      "created_at": "20260611_163732",
+      "correct_count": 0,
+      "wrong_count": 0
+    },
+    {
+      "rule_id": "8e928f7974",
+      "name": "chrome",
+      "trigger_template": "D:\\Project\\mage adblock\\v7\\mag3_addskipper\\DATA_BACKUP_COPY_ME\\profiles\\live_earth\\conditional_trigger_templates\\trigger_chrome_20260611_164604.png",
+      "target_template": "D:\\Project\\mage adblock\\v7\\mag3_addskipper\\DATA_BACKUP_COPY_ME\\profiles\\live_earth\\conditional_target_templates\\target_chrome_20260611_164609.png",
+      "action": "click_target_template",
+      "enabled": true,
+      "created_at": "20260611_164609",
+      "correct_count": 0,
+      "wrong_count": 0
+    },
+    {
+      "rule_id": "de00519c2c",
+      "name": "fgh",
+      "trigger_template": "D:\\Project\\mage adblock\\v7\\mag3_addskipper\\DATA_BACKUP_COPY_ME\\profiles\\live_earth\\conditional_trigger_templates\\trigger_fgh_20260611_165746.png",
+      "target_template": "D:\\Project\\mage adblock\\v7\\mag3_addskipper\\DATA_BACKUP_COPY_ME\\profiles\\live_earth\\conditional_target_templates\\target_fgh_20260611_165751.png",
+      "action": "click_target_template",
+      "enabled": true,
+      "created_at": "20260611_165751",
+      "correct_count": 0,
+      "wrong_count": 0
+    },
+    {
+      "rule_id": "167ec88ce0",
+      "name": "gj",
+      "trigger_template": "D:\\Project\\mage adblock\\v7\\mag3_addskipper\\DATA_BACKUP_COPY_ME\\profiles\\live_earth\\conditional_trigger_templates\\trigger_gj_20260611_165818.png",
+      "target_template": "D:\\Project\\mage adblock\\v7\\mag3_addskipper\\DATA_BACKUP_COPY_ME\\profiles\\live_earth\\conditional_target_templates\\target_gj_20260611_165823.png",
+      "action": "click_target_template",
+      "enabled": true,
+      "created_at": "20260611_165823",
+      "correct_count": 0,
+      "wrong_count": 0
+    },
+    {
+      "rule_id": "f5c44c822c",
+      "name": "facebook",
+      "trigger_template": "D:\\Project\\mage adblock\\v7\\mag3_addskipper\\DATA_BACKUP_COPY_ME\\profiles\\live_earth\\conditional_trigger_templates\\trigger_facebook_20260611_173507.png",
+      "target_template": "D:\\Project\\mage adblock\\v7\\mag3_addskipper\\DATA_BACKUP_COPY_ME\\profiles\\live_earth\\conditional_target_templates\\target_facebook_20260611_173512.png",
+      "action": "click_target_template",
+      "enabled": true,
+      "created_at": "20260611_173512",
+      "correct_count": 0,
+      "wrong_count": 0
+    },
+    {
+      "rule_id": "3cbbf13276",
+      "name": "df",
+      "trigger_template": "D:\\Project\\mage adblock\\v7\\mag3_addskipper\\DATA_BACKUP_COPY_ME\\profiles\\live_earth\\conditional_trigger_templates\\trigger_df_20260611_174010.png",
+      "target_template": "D:\\Project\\mage adblock\\v7\\mag3_addskipper\\DATA_BACKUP_COPY_ME\\profiles\\live_earth\\conditional_target_templates\\target_df_20260611_174014.png",
+      "action": "click_target_template",
+      "enabled": true,
+      "created_at": "20260611_174014",
+      "correct_count": 0,
+      "wrong_count": 0
+    },
+    {
+      "rule_id": "db9a27ffb4",
+      "name": "i",
+      "trigger_template": "D:\\Project\\mage adblock\\v7\\mag3_addskipper\\DATA_BACKUP_COPY_ME\\profiles\\live_earth\\conditional_trigger_templates\\trigger_i_20260611_174026.png",
+      "target_template": "D:\\Project\\mage adblock\\v7\\mag3_addskipper\\DATA_BACKUP_COPY_ME\\profiles\\live_earth\\conditional_target_templates\\target_i_20260611_174032.png",
+      "action": "click_target_template",
+      "enabled": true,
+      "created_at": "20260611_174032",
+      "correct_count": 0,
+      "wrong_count": 0
+    },
+    {
+      "rule_id": "1015709c77",
+      "name": "ffef",
+      "trigger_template": "D:\\Project\\mage adblock\\v7\\mag3_addskipper\\DATA_BACKUP_COPY_ME\\profiles\\live_earth\\conditional_trigger_templates\\trigger_ffef_20260611_174228.png",
+      "target_template": "D:\\Project\\mage adblock\\v7\\mag3_addskipper\\DATA_BACKUP_COPY_ME\\profiles\\live_earth\\conditional_target_templates\\target_ffef_20260611_174234.png",
+      "action": "click_target_template",
+      "enabled": true,
+      "created_at": "20260611_174234",
+      "correct_count": 0,
+      "wrong_count": 0
+    },
+    {
+      "rule_id": "0eff214e11",
+      "name": "yui",
+      "trigger_template": "D:\\Project\\mage adblock\\v7\\mag3_addskipper\\DATA_BACKUP_COPY_ME\\profiles\\live_earth\\conditional_trigger_templates\\trigger_yui_20260611_174245.png",
+      "target_template": "D:\\Project\\mage adblock\\v7\\mag3_addskipper\\DATA_BACKUP_COPY_ME\\profiles\\live_earth\\conditional_target_templates\\target_yui_20260611_174250.png",
+      "action": "click_target_template",
+      "enabled": true,
+      "created_at": "20260611_174250",
+      "correct_count": 0,
+      "wrong_count": 0
+    },
+    {
+      "rule_id": "e16b19f5d2",
+      "name": "tyi",
+      "trigger_template": "D:\\Project\\mage adblock\\v7\\mag3_addskipper\\DATA_BACKUP_COPY_ME\\profiles\\live_earth\\conditional_trigger_templates\\trigger_tyi_20260611_174304.png",
+      "target_template": "D:\\Project\\mage adblock\\v7\\mag3_addskipper\\DATA_BACKUP_COPY_ME\\profiles\\live_earth\\conditional_target_templates\\target_tyi_20260611_174308.png",
+      "action": "click_target_template",
+      "enabled": true,
+      "created_at": "20260611_174308",
+      "correct_count": 0,
+      "wrong_count": 0
+    }
+  ]
+}

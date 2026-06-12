@@ -1,7 +1,18 @@
 from __future__ import annotations
 import shutil
-from pathlib import Path
-from paths import PROFILES_DIR, ensure_dirs, ensure_profile, profile_dir, slugify, load_json, save_json, DEFAULT_PROFILE_ID, DEFAULT_PROFILE_NAME
+from paths import (
+    PROFILES_DIR,
+    ensure_dirs,
+    ensure_profile,
+    profile_dir,
+    slugify,
+    load_json,
+    save_json,
+    DEFAULT_PROFILE_ID,
+    DEFAULT_PROFILE_NAME,
+    PROFILE_TEMPLATE_FOLDERS,
+    remove_images,
+)
 
 
 def list_profiles() -> list[dict]:
@@ -40,19 +51,11 @@ def delete_profile(profile_id: str) -> None:
         create_profile(DEFAULT_PROFILE_NAME)
 
 
-def clear_profile_templates(profile_id: str, template_type: str | None = None) -> None:
+def clear_profile_templates(profile_id: str, template_type: str | None = None) -> int:
     p = profile_dir(profile_id)
-    folders = {
-        "close": "close_templates",
-        "back": "back_templates",
-        "icon": "app_icon_templates",
-        "element": "element_templates",
-        "screen": "screen_templates",
-    }
+    folders = PROFILE_TEMPLATE_FOLDERS
     targets = [folders[template_type]] if template_type in folders else list(folders.values())
+    removed = 0
     for folder in targets:
-        d = p / folder
-        d.mkdir(parents=True, exist_ok=True)
-        for item in d.iterdir():
-            if item.is_file() and item.suffix.lower() in [".png", ".jpg", ".jpeg", ".bmp", ".webp"]:
-                item.unlink(missing_ok=True)
+        removed += remove_images(p / folder)
+    return removed
